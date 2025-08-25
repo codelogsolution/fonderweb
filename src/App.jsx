@@ -35,8 +35,8 @@ export default function App() {
 
       <FloatingContact
         brand="#0B1C3F"
-        whatsappNumber="919876543210"
-        callNumber="+91 98765 43210"
+        whatsappNumber="919555232468"
+        callNumber="+91 95552 32468"
         message="Hi! I'd like to discuss a project."
       />
     </>
