@@ -9,6 +9,7 @@ import Portfolio from "./components/Portfolio";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import ScrollToTop from "./hooks/ScrollToTop";
+import FloatingContact from "./components/FloatingContact";
 
 export default function App() {
   useLenis();
@@ -31,6 +32,13 @@ export default function App() {
         </Routes>
       </main>
       <Footer />
+
+      <FloatingContact
+        brand="#0B1C3F"
+        whatsappNumber="919876543210"
+        callNumber="+91 98765 43210"
+        message="Hi! I'd like to discuss a project."
+      />
     </>
   );
 }
