@@ -1,11 +1,11 @@
 import React, { useRef, useEffect, useState } from "react";
 import { useInView } from "framer-motion";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
-import CountUp from "react-countup";
-import AnimatedSection from "./AnimatedSection";
 import "react-circular-progressbar/dist/styles.css";
+import CountUp from "react-countup"; // ✅ Direct import is fine in React
 
-// Update: You now define both value and max for each stat
+import AnimatedSection from "./AnimatedSection";
+
 const stats = [
   { number: 80, max: 100, label: "Projects Delivered" },
   { number: 45, max: 50, label: "Happy Clients" },
@@ -41,25 +41,15 @@ export default function Stats() {
                     pathColor: "#ffffff",
                     trailColor: "rgba(255,255,255,0.2)",
                     textColor: "#ffffff",
-                    textSize: "0px", // we'll use custom overlay instead
+                    textSize: "0px",
                   })}
                 />
-                {/* Overlay: Show real-time counting as X / MAX */}
+                {/* Overlay counter */}
                 <div className="absolute inset-0 flex items-center justify-center text-white font-semibold text-base md:text-lg">
                   {animate ? (
-                    <CountUp
-                      start={0}
-                      end={s.number}
-                      duration={2}
-                      preserveValue
-                    >
-                      {({ countUpRef }) => (
-                        <span>
-                          <span ref={countUpRef} />
-                          {' '}+
-                        </span>
-                      )}
-                    </CountUp>
+                    <span>
+                      <CountUp start={0} end={s.number} duration={2} /> / {s.max}
+                    </span>
                   ) : (
                     `0 / ${s.max}`
                   )}
