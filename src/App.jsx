@@ -7,6 +7,7 @@ import ServicesPage from "./pages/ServicesPage";
 import BlogStrip from "./components/BlogStrip";
 import Portfolio from "./components/Portfolio";
 import About from "./components/About";
+import Contact from "./components/Contact";
 
 export default function App() {
   useLenis();
@@ -20,6 +21,7 @@ export default function App() {
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/protfolio" element={<Portfolio />} />
           <Route path="/blog" element={<BlogStrip />} />
+          <Route path="/contactus" element={<Contact />} />
           {/* Sub-services */}
           {/* <Route path="/services/web-development" element={<WebDev />} />
           <Route path="/services/ui-ux" element={<UIUX />} />

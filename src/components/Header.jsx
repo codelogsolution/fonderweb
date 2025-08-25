@@ -83,7 +83,9 @@ export default function Header() {
             Blog
           </Link>
 
-          <Button>Explore More</Button>
+          <Link to="/contactus">
+          <Button>Contact Us</Button>
+          </Link>
         </nav>
 
         {/* Mobile Menu Toggle */}
