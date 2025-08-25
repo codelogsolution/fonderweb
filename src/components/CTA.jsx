@@ -4,7 +4,7 @@ import AnimatedSection from "./AnimatedSection";
 export default function CTA() {
   return (
     <AnimatedSection>
-      <section className="py-20 bg-brand text-white text-center">
+      <section className="py-5 lg:py-20 bg-brand text-white text-center">
         <div className="container mx-auto px-6">
           <h2 className="text-3xl md:text-4xl font-bold">
             Ready to Start Your Project?

@@ -23,7 +23,7 @@ const benefits = [
 export default function Benefits() {
   return (
     <AnimatedSection>
-      <section className="py-20 bg-gray-50">
+      <section className="py-5 lg:py-20 bg-gray-50">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
             Why Work With Us

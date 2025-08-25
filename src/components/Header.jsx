@@ -33,7 +33,10 @@ export default function Header() {
 
           {/* Dropdown Parent */}
           <div className="group relative">
-            <Link to="/services" className="flex items-center gap-1 cursor-pointer hover:text-brand">
+            <Link
+              to="/services"
+              className="flex items-center gap-1 cursor-pointer hover:text-brand"
+            >
               <span>Services</span>
               <ChevronDown className="w-4 h-4 mt-0.5 transition-transform group-hover:rotate-180" />
             </Link>
@@ -73,7 +76,7 @@ export default function Header() {
             </div>
           </div>
 
-          <Link to="/portfolio" className="hover:text-brand">
+          <Link to="/protfolio" className="hover:text-brand">
             Portfolio
           </Link>
           <Link to="/blog" className="hover:text-brand">
@@ -96,13 +99,20 @@ export default function Header() {
       {/* Mobile Menu */}
       {open && (
         <div className="md:hidden border-t bg-white">
-          <div className="container py-4 grid gap-3 text-sm">
+          <div className="container py-4 grid gap-3 text-sm pb-6">
             {["About", "Services", "Portfolio", "Blog"].map((i) => (
-              <Link key={i} to={`/${i.toLowerCase()}`} className="py-1">
+              <Link
+                key={i}
+                to={`/${i.toLowerCase()}`}
+                className="hover:text-brand py-1"
+                onClick={() => {
+                  setOpen(false); // close menu
+                  window.scrollTo(0, 0); // optional: scroll to top
+                }}
+              >
                 {i}
               </Link>
             ))}
-            <Button className="mt-2">Explore More</Button>
           </div>
         </div>
       )}

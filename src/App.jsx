@@ -5,16 +5,20 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import ServicesPage from "./pages/ServicesPage";
 import BlogStrip from "./components/BlogStrip";
+import Portfolio from "./components/Portfolio";
+import About from "./components/About";
 
 export default function App() {
   useLenis();
   return (
     <>
       <Header />
-      <main>
+      <main className="main-content">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
           <Route path="/services" element={<ServicesPage />} />
+          <Route path="/protfolio" element={<Portfolio />} />
           <Route path="/blog" element={<BlogStrip />} />
           {/* Sub-services */}
           {/* <Route path="/services/web-development" element={<WebDev />} />

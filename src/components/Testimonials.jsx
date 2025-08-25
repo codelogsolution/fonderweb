@@ -2,32 +2,35 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import React from "react";
 import AnimatedSection from "./AnimatedSection";
+import t1 from "../assets/t1.jpg"
+import t2 from "../assets/t2.jpg"
+import t3 from "../assets/t3.jpg"
 
 const testimonials = [
   {
     name: "Sarah Johnson",
     role: "CEO, StartupX",
     text: "The team delivered our platform with great design and speed. Highly recommend!",
-    img: "/images/client1.jpg",
+    img: t1,
   },
   {
     name: "David Kim",
     role: "Marketing Head, BrandCo",
     text: "Amazing creative ideas and smooth animations. Our site looks world-class.",
-    img: "/images/client2.jpg",
+    img: t2,
   },
   {
-    name: "Priya Sharma",
+    name: "Emily",
     role: "Founder, E-Shop",
     text: "They helped us grow our online business with a sleek ecommerce solution.",
-    img: "/images/client3.jpg",
+    img: t3,
   },
 ];
 
 export default function Testimonials() {
   return (
     <AnimatedSection>
-      <section className="py-20">
+      <section className="py-5 lg:py-20">
         <div className="container mx-auto px-6">
           <h2 className="text-3xl md:text-4xl font-bold text-center">
             What Clients Say

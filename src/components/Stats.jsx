@@ -26,7 +26,7 @@ export default function Stats() {
     <AnimatedSection>
       <section
         ref={sectionRef}
-        className="py-20 bg-brand text-white"
+        className="py-5 lg:py-20 bg-brand text-white"
         id="stats"
       >
         <div className="container mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-10 text-center">
