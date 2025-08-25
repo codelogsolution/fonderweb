@@ -8,6 +8,7 @@ import BlogStrip from "./components/BlogStrip";
 import Portfolio from "./components/Portfolio";
 import About from "./components/About";
 import Contact from "./components/Contact";
+import ScrollToTop from "./hooks/ScrollToTop";
 
 export default function App() {
   useLenis();
@@ -15,11 +16,12 @@ export default function App() {
     <>
       <Header />
       <main className="main-content">
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<ServicesPage />} />
-          <Route path="/protfolio" element={<Portfolio />} />
+          <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/blog" element={<BlogStrip />} />
           <Route path="/contactus" element={<Contact />} />
           {/* Sub-services */}
