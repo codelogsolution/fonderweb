@@ -76,8 +76,8 @@ export default function Header() {
             </div>
           </div>
 
-          <Link to="/portfolio" className="hover:text-brand">
-            Portfolio
+          <Link to="/courses" className="hover:text-brand">
+            Courses
           </Link>
           <Link to="/blog" className="hover:text-brand">
             Blog
@@ -102,7 +102,7 @@ export default function Header() {
       {open && (
         <div className="md:hidden border-t bg-white">
           <div className="container py-4 grid gap-3 text-sm pb-6">
-            {["About", "Services", "Portfolio", "Blog"].map((i) => {
+            {["About", "Services", "Courses", "Blog"].map((i) => {
               return (
                 <Link
                   key={i}
@@ -117,6 +117,15 @@ export default function Header() {
                 </Link>
               );
             })}
+            <Link
+              to="/contactus"
+              onClick={() => {
+                setOpen(false); // close menu
+                window.scrollTo(0, 0); // optional: scroll to top
+              }}
+            >
+              <Button className="mt-2 w-100">Contact Us</Button>
+            </Link>
           </div>
         </div>
       )}

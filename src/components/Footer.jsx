@@ -26,8 +26,8 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link to="/portfolio" className="hover:text-white">
-                Portfolio
+              <Link to="/courses" className="hover:text-white">
+                Courses
               </Link>
             </li>
             <li>
@@ -52,7 +52,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="mt-10 text-center text-gray-500 text-sm">
-        © {new Date().getFullYear()} Fonder. All rights reserved.
+        © {new Date('2023').getFullYear()} Fonder. All rights reserved.
       </div>
     </footer>
   );

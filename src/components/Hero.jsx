@@ -3,6 +3,14 @@ import AnimatedSection from "./AnimatedSection";
 import heroImg from "../assets/banner1.jpg";
 
 export default function Hero() {
+  const backgroundStyle = {
+    backgroundImage: `url(${heroImg})`,
+    height: '280px',
+    width: '100%', 
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center',
+  };
   return (
     <AnimatedSection>
       <section className="hero-banner relative w-full min-h-screen grid grid-cols-1 md:grid-cols-2 bg-gradient-to-b from-white to-gray-50">
@@ -69,7 +77,7 @@ export default function Hero() {
           </div>
           <div
             className="relative w-full min-h-screen flex justify-center md:justify-end items-start md:items-center py-16 md:py-0 bg-cover bg-center"
-            style={{ backgroundImage: `url(${heroImg})`, marginTop: -84 }}
+            style={{ ...backgroundStyle, marginTop: -84 }}
           >
             <div className="absolute inset-0 bg-black/20 md:rounded-l-2xl"></div>
           </div>

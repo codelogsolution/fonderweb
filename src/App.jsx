@@ -5,7 +5,7 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import ServicesPage from "./pages/ServicesPage";
 import BlogStrip from "./components/BlogStrip";
-import Portfolio from "./components/Portfolio";
+import Courses from "./components/Courses";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import ScrollToTop from "./hooks/ScrollToTop";
@@ -22,7 +22,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<ServicesPage />} />
-          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/courses" element={<Courses />} />
           <Route path="/blog" element={<BlogStrip />} />
           <Route path="/contactus" element={<Contact />} />
           {/* Sub-services */}

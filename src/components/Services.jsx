@@ -1,6 +1,7 @@
 import React from "react";
 import AnimatedSection from "./AnimatedSection";
 import { Code, PenTool, Target, Megaphone } from "lucide-react"; // icons
+import { motion, useInView } from "framer-motion";
 
 const services = [
   {
@@ -28,6 +29,40 @@ const services = [
 export default function Services() {
   return (
     <>
+      {/* Services Grid */}
+      <AnimatedSection>
+        <section className="py-10 lg:py-20 overflow-x-hidden">
+          <div className="container mx-auto px-6">
+            <h3 className="text-3xl md:text-4xl font-bold text-center mb-12">
+              Our Services
+            </h3>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {services.map((s, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 60 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{
+                    duration: 0.8,
+                    delay: i * 0.1,
+                    ease: [0.25, 0.1, 0.25, 1], // 👈 Smooth cubic bezier easing
+                  }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  className="group bg-white border border-gray-100 p-8 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all"
+                >
+                  <div className="mb-6">{s.icon}</div>
+                  <h4 className="text-xl font-semibold mb-3 group-hover:text-brand">
+                    {s.title}
+                  </h4>
+                  <p className="text-gray-600 text-sm">{s.desc}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </AnimatedSection>
+
       {/* Hero / Intro */}
       <AnimatedSection>
         <section className="py-16 lg:py-28 bg-gray-50">
@@ -45,36 +80,17 @@ export default function Services() {
         </section>
       </AnimatedSection>
 
-      {/* Services Grid */}
-      <AnimatedSection>
-        <section className="py-10 lg:py-20">
-          <div className="container mx-auto px-6">
-            <h3 className="text-3xl md:text-4xl font-bold text-center mb-12">
-              Our Services
-            </h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {services.map((s, i) => (
-                <div
-                  key={i}
-                  className="group bg-white border border-gray-100 p-8 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all"
-                >
-                  <div className="mb-6">{s.icon}</div>
-                  <h4 className="text-xl font-semibold mb-3 group-hover:text-brand">
-                    {s.title}
-                  </h4>
-                  <p className="text-gray-600 text-sm">{s.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      </AnimatedSection>
-
       {/* Why Choose Us */}
       <AnimatedSection>
-        <section className="py-16 lg:py-24 bg-brand text-white">
+        <section className="py-16 lg:py-24 bg-brand text-white overflow-x-hidden">
           <div className="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-            <div>
+            {/* Left Side Animation */}
+            <motion.div
+              initial={{ opacity: 0, x: -80 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: false, amount: 0.3 }}
+            >
               <h3 className="text-3xl md:text-4xl font-bold mb-6">
                 Why Choose Our Agency?
               </h3>
@@ -84,27 +100,23 @@ export default function Services() {
                 <li>✔ Transparent process & on-time delivery</li>
                 <li>✔ Long-term partnership focus</li>
               </ul>
-            </div>
-            <div className="bg-white/10 p-8 rounded-2xl backdrop-blur-lg">
+            </motion.div>
+
+            {/* Right Side Animation */}
+            <motion.div
+              initial={{ opacity: 0, x: 80 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: false, amount: 0.3 }}
+              className="bg-white/10 p-8 rounded-2xl backdrop-blur-lg"
+            >
               <p className="text-xl font-semibold mb-4">
                 “Working with this team completely transformed our online
                 presence. Highly recommended!”
               </p>
               <p className="text-sm opacity-80">— Client Testimonial</p>
-            </div>
+            </motion.div>
           </div>
-        </section>
-      </AnimatedSection>
-
-      {/* CTA */}
-      <AnimatedSection>
-        <section className="py-12 lg:py-20 bg-gray-100 text-center">
-          <h3 className="text-2xl md:text-3xl font-bold mb-6">
-            Ready to take your brand to the next level?
-          </h3>
-          <button className="px-8 py-3 rounded-full bg-brand text-white font-semibold shadow hover:scale-105 transition">
-            Let’s Work Together
-          </button>
         </section>
       </AnimatedSection>
     </>

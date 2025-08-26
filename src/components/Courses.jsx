@@ -1,69 +1,90 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import AnimatedSection from "./AnimatedSection";
 import img1 from "../assets/ecom.jpg";
 import img2 from "../assets/img2.jpg";
 import img3 from "../assets/img3.png";
 import img4 from "../assets/img4.jpg";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { Code, Layers, Smartphone, BookOpen } from "lucide-react";
+import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
+import "react-circular-progressbar/dist/styles.css";
+import CountUp from "react-countup";
 
-const projects = [
-  {
-    title: "E-commerce Website",
-    img: img1,
-    desc: "Scalable online store with payment integration.",
-  },
-  {
-    title: "SaaS Dashboard",
-    img: img2,
-    desc: "Analytics dashboard with real-time charts.",
-  },
-  {
-    title: "Mobile App UI",
-    img: img3,
-    desc: "Cross-platform UI for React Native apps.",
-  },
-  {
-    title: "Brand Landing Page",
-    img: img4,
-    desc: "Creative landing page with animations.",
-  },
-];
+export default function Courses() {
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
+  const [animate, setAnimate] = useState(false);
 
-const skills = [
-  { name: "JavaScript", level: 80 },
-  { name: "React.js", level: 85 },
-  { name: "React Native", level: 75 },
-  { name: "C Language", level: 70 },
-];
+  useEffect(() => {
+    if (isInView) setAnimate(true);
+  }, [isInView]);
 
-const courses = [
-  {
-    title: "Fullstack Development",
-    icon: <Code className="w-10 h-10 text-brand" />,
-  },
-  { title: "UI/UX Design", icon: <Layers className="w-10 h-10 text-brand" /> },
-  {
-    title: "Mobile Development",
-    icon: <Smartphone className="w-10 h-10 text-brand" />,
-  },
-  {
-    title: "Digital Marketing",
-    icon: <BookOpen className="w-10 h-10 text-brand" />,
-  },
-];
+  const projects = [
+    {
+      title: "E-commerce Website",
+      img: img1,
+      desc: "Scalable online store with payment integration.",
+    },
+    {
+      title: "SaaS Dashboard",
+      img: img2,
+      desc: "Analytics dashboard with real-time charts.",
+    },
+    {
+      title: "Mobile App UI",
+      img: img3,
+      desc: "Cross-platform UI for React Native apps.",
+    },
+    {
+      title: "Brand Landing Page",
+      img: img4,
+      desc: "Creative landing page with animations.",
+    },
+  ];
 
-export default function Portfolio() {
+  const skills = [
+    { name: "JavaScript", level: 80 },
+    { name: "React.js", level: 85 },
+    { name: "React Native", level: 75 },
+    { name: "C Language", level: 70 },
+  ];
+
+  const courses = [
+    {
+      title: "Fullstack Development",
+      icon: <Code className="w-10 h-10 text-brand" />,
+    },
+    {
+      title: "UI/UX Design",
+      icon: <Layers className="w-10 h-10 text-brand" />,
+    },
+    {
+      title: "Mobile Development",
+      icon: <Smartphone className="w-10 h-10 text-brand" />,
+    },
+    {
+      title: "Digital Marketing",
+      icon: <BookOpen className="w-10 h-10 text-brand" />,
+    },
+  ];
+
+  const stats = [
+    { number: 80, max: 100, label: "Projects Delivered" },
+    { number: 45, max: 50, label: "Happy Clients" },
+    { number: 8, max: 10, label: "Years Experience" },
+    { number: 12, max: 15, label: "Team Members" },
+  ];
+
   return (
     <>
-      {/* Portfolio Swiper Section */}
+      {/* Courses Swiper Section */}
       <AnimatedSection>
         <section className="py-5 lg:py-20 bg-gray-50">
           <div className="container mx-auto px-6">
             <h2 className="text-3xl md:text-4xl font-bold text-center">
-              Our Portfolio
+              Website Development Courses
             </h2>
             <p className="text-center text-gray-600 mt-2">
               Some of our latest creative works.
@@ -102,7 +123,7 @@ export default function Portfolio() {
         <section className="py-10 lg:py-20 bg-white">
           <div className="container mx-auto px-6">
             <h2 className="text-3xl md:text-4xl font-bold text-center">
-              Our Skills
+              Technologies Used
             </h2>
             <div className="mt-10 space-y-6 max-w-2xl mx-auto">
               {skills.map((s, i) => (
@@ -131,7 +152,7 @@ export default function Portfolio() {
         <section className="py-10 lg:py-20 bg-gray-50">
           <div className="container mx-auto px-6">
             <h2 className="text-3xl md:text-4xl font-bold text-center">
-              Our Courses
+              Our More Courses
             </h2>
             <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {courses.map((c, i) => (
@@ -152,6 +173,9 @@ export default function Portfolio() {
       {/* Project Details Section */}
       <AnimatedSection>
         <section className="py-10 lg:py-20 bg-white overflow-x-hidden">
+          <h2 className="text-3xl md:text-4xl font-bold text-center pb-20">
+            Our Achievements
+          </h2>
           <div className="container mx-auto px-6 space-y-16">
             {projects.map((p, i) => (
               <motion.div
@@ -176,6 +200,46 @@ export default function Portfolio() {
                   <p className="text-gray-600 mt-4">{p.desc}</p>
                 </div>
               </motion.div>
+            ))}
+          </div>
+        </section>
+      </AnimatedSection>
+
+      <AnimatedSection>
+        <section
+          ref={sectionRef}
+          className="py-5 lg:py-20 bg-brand text-white"
+          id="stats"
+        >
+          <div className="container mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-10 text-center">
+            {stats.map((s, i) => (
+              <div key={i}>
+                <div className="w-24 h-24 mx-auto relative">
+                  <CircularProgressbar
+                    value={animate ? s.number : 0}
+                    maxValue={s.max}
+                    strokeWidth={4}
+                    styles={buildStyles({
+                      pathColor: "#ffffff",
+                      trailColor: "rgba(255,255,255,0.2)",
+                      textColor: "#ffffff",
+                      textSize: "0px",
+                    })}
+                  />
+                  {/* Overlay counter */}
+                  <div className="absolute inset-0 flex items-center justify-center text-white font-semibold text-base md:text-lg">
+                    {animate ? (
+                      <span>
+                        <CountUp start={0} end={s.number} duration={2} /> /{" "}
+                        {s.max}
+                      </span>
+                    ) : (
+                      `0 / ${s.max}`
+                    )}
+                  </div>
+                </div>
+                <p className="mt-4 text-white/80">{s.label}</p>
+              </div>
             ))}
           </div>
         </section>
