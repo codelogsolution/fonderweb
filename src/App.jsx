@@ -35,9 +35,24 @@ export default function App() {
 
       <FloatingContact
         brand="#0B1C3F"
-        whatsappNumber="919555232468"
-        callNumber="+91 95552 32468"
-        message="Hi! I'd like to discuss a project."
+        whatsappNumber="917042620665"
+        callNumber="+91 70426 20665"
+        message="Hi! I’m looking to discuss a project involving full digital solutions. This includes:
+
+Website and mobile app development
+
+Digital and social media marketing
+
+Social media content scripting
+
+Video creation and editing
+
+I'd love to connect with your team to explore how we can bring this vision to life. Please let me know the best way to get started.
+
+Looking forward to your response!
+
+Best regards,
+Fonder"
       />
     </>
   );
