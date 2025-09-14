@@ -3,6 +3,7 @@ import AnimatedSection from "../components/AnimatedSection";
 import t1 from "../assets/t1.jpg"
 import t2 from "../assets/t2.jpg"
 import t3 from "../assets/t3.jpg"
+import { Link } from "react-router-dom";
 
 export default function About() {
   const team = [
@@ -136,9 +137,9 @@ export default function About() {
           <p className="mt-4 text-lg text-white/90">
             Ready to elevate your business with Fonder? Let’s talk today.
           </p>
-          <button className="mt-6 px-8 py-3 rounded-full bg-white text-brand font-semibold shadow-lg hover:opacity-90 transition">
+          <Link to="/contact" className="mt-5 inline-block px-8 py-3 rounded-full bg-white text-brand font-semibold shadow-lg hover:opacity-90 transition">
             Contact Us
-          </button>
+          </Link>
         </div>
       </section>
     </AnimatedSection>

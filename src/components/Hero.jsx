@@ -76,8 +76,8 @@ export default function Hero() {
             </svg>
           </div>
           <div
-            className="relative w-full min-h-screen flex justify-center md:justify-end items-start md:items-center py-16 md:py-0 bg-cover bg-center"
-            style={{ ...backgroundStyle, marginTop: -84 }}
+            className="relative w-full flex justify-center md:justify-end items-start md:items-center py-16 md:py-0 bg-cover bg-center"
+            style={{ ...backgroundStyle, marginTop: -84, height: '67vh' }}
           >
             <div className="absolute inset-0 bg-black/20 md:rounded-l-2xl"></div>
           </div>

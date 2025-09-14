@@ -24,7 +24,7 @@ export default function App() {
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/courses" element={<Courses />} />
           <Route path="/blog" element={<BlogStrip />} />
-          <Route path="/contactus" element={<Contact />} />
+          <Route path="/contact" element={<Contact />} />
           {/* Sub-services */}
           {/* <Route path="/services/web-development" element={<WebDev />} />
           <Route path="/services/ui-ux" element={<UIUX />} />

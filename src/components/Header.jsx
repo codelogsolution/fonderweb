@@ -83,7 +83,7 @@ export default function Header() {
             Blog
           </Link>
 
-          <Link to="/contactus">
+          <Link to="/contact">
             <Button>Contact Us</Button>
           </Link>
         </nav>
@@ -118,7 +118,7 @@ export default function Header() {
               );
             })}
             <Link
-              to="/contactus"
+              to="/contact"
               onClick={() => {
                 setOpen(false); // close menu
                 window.scrollTo(0, 0); // optional: scroll to top
